@@ -38,13 +38,15 @@ public class signin {
 
         System.out.println("Enter Your Password : "); // string
         String password = sc.next();
+        
 
-        Name.put("Name : ", name);
-        Username.put("Username : ", username);
-        Address.put("Address : ", address);
-        Email.put("Email : ", email);
-        Phone.put("Phone : ", phone);
-        Password.put("Password : ", password);
+        // email is used as the identifier later when we check its coorespondence 
+        Name.put(email, name);
+        Username.put(email, username);
+        Address.put(email, address);
+        Email.put(email, email); // Using email as the key for Email map
+        Phone.put(email, phone);
+        Password.put(email, password); // Using email as the key for Password map
 
         System.out.println("You have successfully created an account!");
         System.out.println(" ");
@@ -63,12 +65,15 @@ public class signin {
 
     public static boolean verifyCredentials(String email, String password) {
         // Check if the entered email and password match the stored data
-        for (int i = 0; i < Email.size(); i++) {
-            if (email.equals(Email.get(i)) && password.equals(Password.get(i))) {
+        if (Password.containsKey(email)) {
+            String storedPassword = Password.get(email);
+            if (storedPassword.equals(password)) {
                 return true;
             }
         }
         return false;
     }
+    
+    
 }
 
