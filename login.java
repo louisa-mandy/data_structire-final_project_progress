@@ -15,7 +15,6 @@ public class login {
         System.out.println("Enter your password : ");
         String enteredPASSWORD = login.next();
 
-        signin.handleSignIn();
 
         boolean found = signin.verifyCredentials(enteredEMAIL, enteredPASSWORD);
 
