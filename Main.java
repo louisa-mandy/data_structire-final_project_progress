@@ -26,8 +26,7 @@ public class Main{
 
             switch (user_input) {
                 case 1: // sign in
-                    signin.handleSignIn();
-                    
+                    signup.handleSignUp();
                     break;
 
                 case 2: // login with exsisting account 
@@ -35,7 +34,7 @@ public class Main{
                     break;
 
                 case 3: // continue as a guest
-                    guest.handleguest();
+                    guest.handleGuest();
                     break;
 
                 case 4: // exit program
