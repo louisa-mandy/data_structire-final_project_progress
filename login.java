@@ -16,11 +16,12 @@ public class login {
         String enteredPASSWORD = login.next();
 
 
-        boolean found = signin.verifyCredentials(enteredEMAIL, enteredPASSWORD);
+        boolean found = signup.verifyCredentials(enteredEMAIL, enteredPASSWORD);
 
             if (found) {
                 System.out.println(" ");
                 System.out.println("Login Successful!");
+                Menu.handleMenu();
 
 
             } else {
